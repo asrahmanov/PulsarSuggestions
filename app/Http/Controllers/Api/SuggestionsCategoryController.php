@@ -12,7 +12,7 @@ class SuggestionsCategoryController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      * @OA\Get (
-     *     path="suggestions-category",
+     *     path="/api//api/suggestions-category",
      *     tags={"Suggestions Category"},
      *     @OA\Response(
      *          response=200,
@@ -31,7 +31,7 @@ class SuggestionsCategoryController extends Controller
      * @return \Illuminate\Http\JsonResponse
      * @OA\Get (
      *     tags={"Suggestions Category"},
-     *     path="suggestions-category/get-by-id/{id}",
+     *     path="/api/suggestions-category/get-by-id/{id}",
      *     @OA\Parameter( name="id", in="path", required=false, description="1", @OA\Schema( type="integer" ) ),
      *
      *     @OA\Response(
@@ -73,7 +73,7 @@ class SuggestionsCategoryController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      * @OA\Post(
-     *     path="suggestions-category",
+     *     path="/api/suggestions-category",
      *     tags={"Suggestions Category"},
      *     @OA\RequestBody(
      *    request="Create Suggestions Category",
@@ -159,7 +159,7 @@ class SuggestionsCategoryController extends Controller
      * @param $id
      * @return \Illuminate\Http\JsonResponse
      * @OA\Patch (
-     *     path="suggestions-category/{id}",
+     *     path="/api/suggestions-category/{id}",
      *     tags={"Suggestions Category"},
      *     @OA\Parameter(
      *      name="id",
@@ -234,7 +234,7 @@ class SuggestionsCategoryController extends Controller
      * @param $id
      * @return \Illuminate\Http\JsonResponse
      * @OA\Delete  (
-     *     path="suggestions-category/{id}",
+     *     path="/api/suggestions-category/{id}",
      *     tags={"Suggestions Category"},
      *     @OA\Parameter(
      *      name="id",

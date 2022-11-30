@@ -3,17 +3,17 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\SuggestionsSubdivision;
+use App\Models\SuggestionsFAQ;
 use Illuminate\Http\Request;
 
-class SuggestionsSubdivisionController extends Controller
+class SuggestionsFAQController extends Controller
 {
     /**
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      * @OA\Get (
-     *     path="/api/suggestions-subdivision",
-     *     tags={"Suggestions Subdivision"},
+     *     path="/api//api/suggestions-faq",
+     *     tags={"suggestions-faq"},
      *     @OA\Response(
      *          response=200,
      *          description="",
@@ -22,7 +22,7 @@ class SuggestionsSubdivisionController extends Controller
      */
     public function index()
     {
-        return response(SuggestionsSubdivision::get(), 200);
+        return response(SuggestionsFAQ::get(), 200);
     }
 
 
@@ -30,8 +30,8 @@ class SuggestionsSubdivisionController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      * @OA\Get (
-     *     tags={"Suggestions Subdivision"},
-     *     path="/api/suggestions-subdivision/get-by-id/{id}",
+     *     tags={"suggestions-faq"},
+     *     path="/api/suggestions-faq/get-by-id/{id}",
      *     @OA\Parameter( name="id", in="path", required=false, description="1", @OA\Schema( type="integer" ) ),
      *
      *     @OA\Response(
@@ -46,7 +46,7 @@ class SuggestionsSubdivisionController extends Controller
     public function getById($id)
     {
 
-        return SuggestionsSubdivision::select()
+        return SuggestionsFAQ::select()
             ->where(['id' => $id])
             ->get();
     }
@@ -73,15 +73,16 @@ class SuggestionsSubdivisionController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      * @OA\Post(
-     *     path="/api/suggestions-subdivision",
-     *     tags={"Suggestions Subdivision"},
+     *     path="/api/suggestions-faq",
+     *     tags={"suggestions-faq"},
      *     @OA\RequestBody(
-     *    request="Create Suggestions Subdivision",
-     *    description="Create Suggestions Subdivision Fields",
+     *    request="Create suggestions-faq",
+     *    description="Create suggestions-faq Fields",
      *    @OA\JsonContent(
      *        type="object",
      *        required={""},
      *          @OA\Property(property="name",description="0", type="string", example="Текст"),
+     *          @OA\Property(property="description",description="0", type="string", example="Текст"),
      *    )
      * ),
      *     @OA\Response(
@@ -91,6 +92,7 @@ class SuggestionsSubdivisionController extends Controller
      *             type="object",
      *          @OA\Property(property="id", type="number", example="1"),
      *          @OA\Property(property="name",description="0", type="string", example="Текст"),
+     *          @OA\Property(property="description",description="0", type="string", example="Текст"),
      *         )
      *      ),
      *     @OA\Response(
@@ -115,9 +117,9 @@ class SuggestionsSubdivisionController extends Controller
     {
 
        if($request->id > 0) {
-           $form = SuggestionsSubdivision::whereId($request->id)->first();
+           $form = SuggestionsFAQ::whereId($request->id)->first();
        } else {
-           $form = new SuggestionsSubdivision();
+           $form = new SuggestionsFAQ();
        }
 
         $validator = $form->validate($request->all());
@@ -127,7 +129,7 @@ class SuggestionsSubdivisionController extends Controller
 
         $form->fill($request->only($form->getFillable()))->save();
         return response(
-            SuggestionsSubdivision::whereId($form->id)->first()->toArray(), 200);
+            SuggestionsFAQ::whereId($form->id)->first()->toArray(), 200);
 
 
     }
@@ -159,8 +161,8 @@ class SuggestionsSubdivisionController extends Controller
      * @param $id
      * @return \Illuminate\Http\JsonResponse
      * @OA\Patch (
-     *     path="/api/suggestions-subdivision/{id}",
-     *     tags={"Suggestions Subdivision"},
+     *     path="/api/suggestions-faq/{id}",
+     *     tags={"suggestions-faq"},
      *     @OA\Parameter(
      *      name="id",
      *      in="path",
@@ -169,12 +171,13 @@ class SuggestionsSubdivisionController extends Controller
      *      )
      *   ),
      *     @OA\RequestBody(
-     *    request="Update Suggestions Subdivision",
-     *    description="Update Suggestions Subdivision Fields",
+     *    request="Update suggestions-faq",
+     *    description="Update suggestions-faq Fields",
      *    @OA\JsonContent(
      *        type="object",
      *        required={""},
      *          @OA\Property(property="name",description="0", type="string", example="Текст"),
+     *          @OA\Property(property="description",description="0", type="string", example="Текст"),
      *    )
      * ),
      *     @OA\Response(
@@ -184,6 +187,7 @@ class SuggestionsSubdivisionController extends Controller
      *             type="object",
      *          @OA\Property(property="id", type="number", example="1"),
      *          @OA\Property(property="name",description="0", type="string", example="Текст"),
+     *          @OA\Property(property="description",description="0", type="string", example="Текст"),
      *
      *         )
      *      ),
@@ -208,7 +212,7 @@ class SuggestionsSubdivisionController extends Controller
      */
     public function update(Request $request)
     {
-        $entity = SuggestionsSubdivision::whereId($request->id)->first();
+        $entity = SuggestionsFAQ::whereId($request->id)->first();
         if (!$entity) {
             return response([], 404);
         }
@@ -234,8 +238,8 @@ class SuggestionsSubdivisionController extends Controller
      * @param $id
      * @return \Illuminate\Http\JsonResponse
      * @OA\Delete  (
-     *     path="/api/suggestions-subdivision/{id}",
-     *     tags={"Suggestions Subdivision"},
+     *     path="/api/suggestions-faq/{id}",
+     *     tags={"suggestions-faq"},
      *     @OA\Parameter(
      *      name="id",
      *      in="path",
@@ -264,7 +268,7 @@ class SuggestionsSubdivisionController extends Controller
      */
     public function destroy($id)
     {
-        $is_deleted = (bool)SuggestionsSubdivision::whereId($id)->delete();
+        $is_deleted = (bool)SuggestionsFAQ::whereId($id)->delete();
 
         return response(['is_deleted' => $is_deleted], $is_deleted ? 200 : 400);
     }

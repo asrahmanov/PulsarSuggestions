@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSuggestionsTable extends Migration
+class CreateSuggesionsFaqTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateSuggestionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('suggestions', function (Blueprint $table) {
+        Schema::create('suggestions_faq', function (Blueprint $table) {
             $table->id();
-            $table->string('fio');
-            $table->integer('user_id');
-            $table->integer('category_id');
-            $table->integer('subdivision_id');
+            $table->string('name');
             $table->string('description');
-            $table->string('file_name');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -33,6 +29,6 @@ class CreateSuggestionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('suggestions');
+        Schema::dropIfExists('suggestions_faq');
     }
 }

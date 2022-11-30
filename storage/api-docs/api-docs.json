@@ -9,23 +9,56 @@
         "version": "1.0.0"
     },
     "paths": {
-        "suggestions-category": {
+        "/api//api/suggestions-category": {
             "get": {
                 "tags": [
                     "Suggestions Category"
                 ],
-                "operationId": "14679282982a496340b8c74130a8a063",
+                "operationId": "fe58c4692c4bffd283a26f8c90d0bcea",
                 "responses": {
                     "200": {
                         "description": ""
                     }
                 }
-            },
+            }
+        },
+        "/api/suggestions-category/get-by-id/{id}": {
+            "get": {
+                "tags": [
+                    "Suggestions Category"
+                ],
+                "operationId": "b5fdb61c82f7c310f85508168ed26135",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "1",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/suggestions-category": {
             "post": {
                 "tags": [
                     "Suggestions Category"
                 ],
-                "operationId": "73cd32d58255e437fd97428b197d0201",
+                "operationId": "45197e466aeff93ba07f4c6c1f5a6c02",
                 "requestBody": {
                     "request": "Create Suggestions Category",
                     "description": "Create Suggestions Category Fields",
@@ -99,43 +132,12 @@
                 }
             }
         },
-        "suggestions-category/get-by-id/{id}": {
-            "get": {
-                "tags": [
-                    "Suggestions Category"
-                ],
-                "operationId": "a919e8bc2c6ca1410c8e5e2a306e4f01",
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "1",
-                        "required": false,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "suggestions-category/{id}": {
+        "/api/suggestions-category/{id}": {
             "delete": {
                 "tags": [
                     "Suggestions Category"
                 ],
-                "operationId": "0227ff271e61df3495073a2fde610f80",
+                "operationId": "a9e03e339707cba4539d030804c8d56a",
                 "parameters": [
                     {
                         "name": "id",
@@ -184,7 +186,7 @@
                 "tags": [
                     "Suggestions Category"
                 ],
-                "operationId": "23dd78449723b6ae98cda28f69d7e469",
+                "operationId": "50dfbed5b4eb48e8920d58010fd1accc",
                 "parameters": [
                     {
                         "name": "id",
@@ -637,12 +639,12 @@
                 }
             }
         },
-        "suggestions-subdivision": {
+        "/api/suggestions-subdivision": {
             "get": {
                 "tags": [
                     "Suggestions Subdivision"
                 ],
-                "operationId": "338924bb7429ddbc9ef18f5974c40c24",
+                "operationId": "069ce6e7e9aa8e3eafa0d352febb7dba",
                 "responses": {
                     "200": {
                         "description": ""
@@ -653,7 +655,7 @@
                 "tags": [
                     "Suggestions Subdivision"
                 ],
-                "operationId": "fb1300179eff31e0de357fc032811f44",
+                "operationId": "4ed4a12898afa8e3640a6ed008bcf3c8",
                 "requestBody": {
                     "request": "Create Suggestions Subdivision",
                     "description": "Create Suggestions Subdivision Fields",
@@ -727,12 +729,12 @@
                 }
             }
         },
-        "suggestions-subdivision/get-by-id/{id}": {
+        "/api/suggestions-subdivision/get-by-id/{id}": {
             "get": {
                 "tags": [
                     "Suggestions Subdivision"
                 ],
-                "operationId": "c4f864be09f3b04809de4b56672ae01f",
+                "operationId": "d295a6222e351b9f1652ffe879c3b217",
                 "parameters": [
                     {
                         "name": "id",
@@ -758,12 +760,12 @@
                 }
             }
         },
-        "suggestions-subdivision/{id}": {
+        "/api/suggestions-subdivision/{id}": {
             "delete": {
                 "tags": [
                     "Suggestions Subdivision"
                 ],
-                "operationId": "7e49bbdb493a57237d8aeeadf41f13f0",
+                "operationId": "299c72708900e2556f29c91e9136a54d",
                 "parameters": [
                     {
                         "name": "id",
@@ -812,7 +814,7 @@
                 "tags": [
                     "Suggestions Subdivision"
                 ],
-                "operationId": "0a97f43aeebc512b50dcb48aea8fa58f",
+                "operationId": "54571e4209107f44dc7b5d2e267c11c4",
                 "parameters": [
                     {
                         "name": "id",

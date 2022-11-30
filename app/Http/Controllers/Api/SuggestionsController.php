@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Suggestions;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class SuggestionsController extends Controller
 {
@@ -85,7 +86,7 @@ class SuggestionsController extends Controller
      *          @OA\Property(property="user_id",description="0", type="number", example="0"),
      *          @OA\Property(property="category_id",description="0", type="number", example="1"),
      *          @OA\Property(property="subdivision_id",description="0", type="number", example="1"),
-     *          @OA\Property(property="file_id",description="0", type="number", example="1"),
+     *          @OA\Property(property="file_name",description="0", type="string", example="текст"),
      *          @OA\Property(property="description",description="0", type="string", example="Текст"),
      *    )
      * ),
@@ -99,7 +100,7 @@ class SuggestionsController extends Controller
      *          @OA\Property(property="user_id",description="0", type="number", example="0"),
      *          @OA\Property(property="category_id",description="0", type="number", example="1"),
      *          @OA\Property(property="subdivision_id",description="0", type="number", example="1"),
-     *          @OA\Property(property="file_id",description="0", type="number", example="1"),
+     *          @OA\Property(property="file_name",description="0", type="string", example="текст"),
      *          @OA\Property(property="description",description="0", type="string", example="Текст"),
      *         )
      *      ),
@@ -123,6 +124,7 @@ class SuggestionsController extends Controller
      */
     public function store(Request $request)
     {
+//        Storage::disk('upload')->;
 
        if($request->id > 0) {
            $form = Suggestions::whereId($request->id)->first();
@@ -188,7 +190,7 @@ class SuggestionsController extends Controller
      *          @OA\Property(property="user_id",description="0", type="number", example="0"),
      *          @OA\Property(property="category_id",description="0", type="number", example="1"),
      *          @OA\Property(property="subdivision_id",description="0", type="number", example="1"),
-     *          @OA\Property(property="file_id",description="0", type="number", example="1"),
+     *          @OA\Property(property="file_name",description="0", type="string", example="текст"),
      *          @OA\Property(property="description",description="0", type="string", example="Текст"),
      *    )
      * ),
@@ -202,7 +204,7 @@ class SuggestionsController extends Controller
      *          @OA\Property(property="user_id",description="0", type="number", example="0"),
      *          @OA\Property(property="category_id",description="0", type="number", example="1"),
      *          @OA\Property(property="subdivision_id",description="0", type="number", example="1"),
-     *          @OA\Property(property="file_id",description="0", type="number", example="1"),
+     *          @OA\Property(property="file_name",description="0", type="string", example="текст"),
      *          @OA\Property(property="description",description="0", type="string", example="Текст"),
      *
      *         )

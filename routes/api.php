@@ -40,7 +40,7 @@ reg_routes('suggestions-category', \App\Http\Controllers\Api\SuggestionsCategory
 );
 
 
-reg_routes('suggestions-subdivision', \App\Http\Controllers\Api\SuggestionsSubdivision::class,
+reg_routes('suggestions-subdivision', \App\Http\Controllers\Api\SuggestionsSubdivisionController::class,
     $router,
     [],
     [],
