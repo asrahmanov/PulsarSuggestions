@@ -12,20 +12,7 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
-//reg_routes(
-//    'samples',
-//    \App\Http\Controllers\Api\SampleController::class,
-//    $router,
-//    [],
-//    [],
-//    [
-//        ['method' => 'get', 'uri' => 'ready-to-qc'],
-//        ['method' => 'get', 'uri' => 'validate-barcode','pathParams'=>['barcode']],
-//        ['method' => 'post', 'uri' => 'search'],
-//        ['method' => 'get', 'uri' => 'field-rules'],
-//        ['method' => 'post', 'uri' => 'registration'],
-//    ]
-//);
+
 
 $router->get('/', function () use ($router) {
     abort(404);
@@ -43,41 +30,25 @@ reg_routes('suggestions', \App\Http\Controllers\Api\SuggestionsController::class
     ]
 );
 
-//
-//reg_routes('suggestions-defect', \App\Http\Controllers\Api\DefectController::class,
-//    $router,
-//    [],
-//    [],
-//    [
-//        ['method' => 'get', 'uri' => 'get-by-id', 'pathParams'=>['id']],
-//        ['method' => 'get', 'uri' => 'get-by-name', 'pathParams'=>['name']],
-//        ['method' => 'get', 'uri' => 'group-by-name', 'pathParams'=>['name']],
-//    ]
-//);
-//
-//
-//reg_routes('suggestions-plan-contract', \App\Http\Controllers\Api\PlanContractController::class,
-//    $router,
-//    [],
-//    [],
-//    [
-//        ['method' => 'get', 'uri' => 'get-by-id', 'pathParams'=>['id']],
-//        ['method' => 'get', 'uri' => 'get-by-name', 'pathParams'=>['company_name']],
-//        ['method' => 'get', 'uri' => 'get-group'],
-//    ]
-//);
-//
-//
-//reg_routes('suggestions-expected-revenue', \App\Http\Controllers\Api\ExpectedRevenueController::class,
-//    $router,
-//    [],
-//    [],
-//    [
-//        ['method' => 'get', 'uri' => 'get-by-id', 'pathParams'=>['id']],
-//        ['method' => 'get', 'uri' => 'get-by-name', 'pathParams'=>['company_name']],
-//        ['method' => 'get', 'uri' => 'get-group'],
-//    ]
-//);
+reg_routes('suggestions-category', \App\Http\Controllers\Api\SuggestionsCategoryController::class,
+    $router,
+    [],
+    [],
+    [
+        ['method' => 'get', 'uri' => 'get-by-id', 'pathParams'=>['id']],
+    ]
+);
+
+
+reg_routes('suggestions-subdivision', \App\Http\Controllers\Api\SuggestionsSubdivision::class,
+    $router,
+    [],
+    [],
+    [
+        ['method' => 'get', 'uri' => 'get-by-id', 'pathParams'=>['id']],
+    ]
+);
+
 
 
 function reg_routes($name, $controllerName, $router, $only = [], $except = [], $customUses = [])
