@@ -85,6 +85,7 @@ class SuggestionsController extends Controller
      *          @OA\Property(property="user_id",description="0", type="number", example="0"),
      *          @OA\Property(property="category_id",description="0", type="number", example="1"),
      *          @OA\Property(property="subdivision_id",description="0", type="number", example="1"),
+     *          @OA\Property(property="file_id",description="0", type="number", example="1"),
      *          @OA\Property(property="description",description="0", type="string", example="Текст"),
      *    )
      * ),
@@ -98,6 +99,7 @@ class SuggestionsController extends Controller
      *          @OA\Property(property="user_id",description="0", type="number", example="0"),
      *          @OA\Property(property="category_id",description="0", type="number", example="1"),
      *          @OA\Property(property="subdivision_id",description="0", type="number", example="1"),
+     *          @OA\Property(property="file_id",description="0", type="number", example="1"),
      *          @OA\Property(property="description",description="0", type="string", example="Текст"),
      *         )
      *      ),
@@ -186,6 +188,7 @@ class SuggestionsController extends Controller
      *          @OA\Property(property="user_id",description="0", type="number", example="0"),
      *          @OA\Property(property="category_id",description="0", type="number", example="1"),
      *          @OA\Property(property="subdivision_id",description="0", type="number", example="1"),
+     *          @OA\Property(property="file_id",description="0", type="number", example="1"),
      *          @OA\Property(property="description",description="0", type="string", example="Текст"),
      *    )
      * ),
@@ -199,6 +202,7 @@ class SuggestionsController extends Controller
      *          @OA\Property(property="user_id",description="0", type="number", example="0"),
      *          @OA\Property(property="category_id",description="0", type="number", example="1"),
      *          @OA\Property(property="subdivision_id",description="0", type="number", example="1"),
+     *          @OA\Property(property="file_id",description="0", type="number", example="1"),
      *          @OA\Property(property="description",description="0", type="string", example="Текст"),
      *
      *         )

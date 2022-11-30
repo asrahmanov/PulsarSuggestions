@@ -20,6 +20,7 @@ class CreateSuggestionsTable extends Migration
             $table->integer('category_id');
             $table->integer('subdivision_id');
             $table->string('description');
+            $table->integer('file_id');
             $table->timestamps();
             $table->softDeletes();
         });
