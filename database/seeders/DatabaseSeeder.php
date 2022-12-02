@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 
 use App\Models\Defect;
+use App\Models\SuggestionsStatus;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -19,6 +20,7 @@ class DatabaseSeeder extends Seeder
            SuggestionsCategorySeeder::class,
            SuggestionsSubdivisionSeeder::class,
            SuggestionsFAQSeeder::class,
+           SuggestionsStatusSeeder::class,
         ]);
     }
 }
