@@ -27,6 +27,7 @@ reg_routes('suggestions', \App\Http\Controllers\Api\SuggestionsController::class
     [],
     [
         ['method' => 'get', 'uri' => 'get-by-id', 'pathParams'=>['id']],
+        ['method' => 'get', 'uri' => 'get-file-by-id', 'pathParams'=>['id']],
     ]
 );
 

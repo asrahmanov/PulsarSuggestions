@@ -55,6 +55,42 @@ class SuggestionsController extends Controller
     }
 
 
+
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     * @OA\Get (
+     *     tags={"Suggestions"},
+     *     path="/api/suggestions/get-file-by-id/{id}",
+     *     @OA\Parameter( name="id", in="path", required=false, description="1", @OA\Schema( type="integer" ) ),
+     *
+     *     @OA\Response(
+     *          response=200,
+     *          description="",
+     *      @OA\JsonContent(
+     *     type="object",
+     *                      )
+     *                  ),
+     *      )
+     */
+    public function getFileById($id)
+    {
+
+        $suggestions = Suggestions::find($id);
+        $path = $suggestions->file_name;
+
+        return Storage::disk('upload' )->download($path);
+
+
+
+    }
+
+
+
+
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -129,7 +165,7 @@ class SuggestionsController extends Controller
 //        $table->string('description');
 //        $table->string('file_name');
         $path = "";
-        if($request->exists('file')) {
+        if ($request->hasFile('file')){
             $file = $request->file('file');
             $path = \Storage::disk('upload')
                 ->putFileAs('/',
