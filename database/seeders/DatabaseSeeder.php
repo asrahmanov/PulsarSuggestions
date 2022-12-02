@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
            SuggestionsCategorySeeder::class,
-           SuggestionsSubdivisionSeeder::class
+           SuggestionsSubdivisionSeeder::class,
+           SuggestionsFAQSeeder::class,
         ]);
     }
 }

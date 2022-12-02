@@ -12,7 +12,7 @@ class SuggestionsFAQController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      * @OA\Get (
-     *     path="/api//api/suggestions-faq",
+     *     path="/api/suggestions-faq",
      *     tags={"suggestions-faq"},
      *     @OA\Response(
      *          response=200,

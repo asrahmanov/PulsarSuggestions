@@ -9,51 +9,18 @@
         "version": "1.0.0"
     },
     "paths": {
-        "/api//api/suggestions-category": {
+        "/api/suggestions-category": {
             "get": {
                 "tags": [
                     "Suggestions Category"
                 ],
-                "operationId": "fe58c4692c4bffd283a26f8c90d0bcea",
+                "operationId": "8af26b16c8b319ccd6435613c3c32c50",
                 "responses": {
                     "200": {
                         "description": ""
                     }
                 }
-            }
-        },
-        "/api/suggestions-category/get-by-id/{id}": {
-            "get": {
-                "tags": [
-                    "Suggestions Category"
-                ],
-                "operationId": "b5fdb61c82f7c310f85508168ed26135",
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "1",
-                        "required": false,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/api/suggestions-category": {
+            },
             "post": {
                 "tags": [
                     "Suggestions Category"
@@ -124,6 +91,37 @@
                                             "type": "object"
                                         }
                                     },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/suggestions-category/get-by-id/{id}": {
+            "get": {
+                "tags": [
+                    "Suggestions Category"
+                ],
+                "operationId": "b5fdb61c82f7c310f85508168ed26135",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "1",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
                                     "type": "object"
                                 }
                             }
@@ -322,10 +320,10 @@
                                         "type": "number",
                                         "example": "1"
                                     },
-                                    "file_id": {
+                                    "file_name": {
                                         "description": "0",
-                                        "type": "number",
-                                        "example": "1"
+                                        "type": "string",
+                                        "example": "текст"
                                     },
                                     "description": {
                                         "description": "0",
@@ -369,10 +367,10 @@
                                             "type": "number",
                                             "example": "1"
                                         },
-                                        "file_id": {
+                                        "file_name": {
                                             "description": "0",
-                                            "type": "number",
-                                            "example": "1"
+                                            "type": "string",
+                                            "example": "текст"
                                         },
                                         "description": {
                                             "description": "0",
@@ -540,10 +538,10 @@
                                         "type": "number",
                                         "example": "1"
                                     },
-                                    "file_id": {
+                                    "file_name": {
                                         "description": "0",
-                                        "type": "number",
-                                        "example": "1"
+                                        "type": "string",
+                                        "example": "текст"
                                     },
                                     "description": {
                                         "description": "0",
@@ -587,10 +585,294 @@
                                             "type": "number",
                                             "example": "1"
                                         },
-                                        "file_id": {
+                                        "file_name": {
                                             "description": "0",
+                                            "type": "string",
+                                            "example": "текст"
+                                        },
+                                        "description": {
+                                            "description": "0",
+                                            "type": "string",
+                                            "example": "Текст"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation errors",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "errors",
+                                    "description": "errors object",
+                                    "properties": {
+                                        "errors": {
+                                            "title": "Validation errors",
+                                            "description": "Validation errors object",
+                                            "properties": {
+                                                "field1": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "example": "The field1 field is required."
+                                                    }
+                                                },
+                                                "field2": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "example": "The field2 field is required."
+                                                    }
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/suggestions-faq": {
+            "get": {
+                "tags": [
+                    "suggestions-faq"
+                ],
+                "operationId": "7094525b8ade6a2cf8f678e81914c6e4",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "suggestions-faq"
+                ],
+                "operationId": "9d7979cdda261a728d711b7e8d4b78d1",
+                "requestBody": {
+                    "request": "Create suggestions-faq",
+                    "description": "Create suggestions-faq Fields",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    ""
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "description": "0",
+                                        "type": "string",
+                                        "example": "Текст"
+                                    },
+                                    "description": {
+                                        "description": "0",
+                                        "type": "string",
+                                        "example": "Текст"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success Create",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
                                             "type": "number",
                                             "example": "1"
+                                        },
+                                        "name": {
+                                            "description": "0",
+                                            "type": "string",
+                                            "example": "Текст"
+                                        },
+                                        "description": {
+                                            "description": "0",
+                                            "type": "string",
+                                            "example": "Текст"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation errors",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "errors",
+                                    "description": "errors object",
+                                    "properties": {
+                                        "errors": {
+                                            "title": "Validation errors",
+                                            "description": "Validation errors object",
+                                            "properties": {
+                                                "field1": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "example": "The field1 field is required."
+                                                    }
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/suggestions-faq/get-by-id/{id}": {
+            "get": {
+                "tags": [
+                    "suggestions-faq"
+                ],
+                "operationId": "455af7b49983822e2e28ee1534e30c04",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "1",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/suggestions-faq/{id}": {
+            "delete": {
+                "tags": [
+                    "suggestions-faq"
+                ],
+                "operationId": "bbb6d1bab6a564c0b13a3e6d9e547a6f",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success Delete",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "is_deleted": {
+                                            "type": "boolean",
+                                            "example": true
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error Delete",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "is_deleted": {
+                                            "type": "boolean",
+                                            "example": false
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "suggestions-faq"
+                ],
+                "operationId": "442e0c590ab183640e910d92a088b02e",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "request": "Update suggestions-faq",
+                    "description": "Update suggestions-faq Fields",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    ""
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "description": "0",
+                                        "type": "string",
+                                        "example": "Текст"
+                                    },
+                                    "description": {
+                                        "description": "0",
+                                        "type": "string",
+                                        "example": "Текст"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success Create",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number",
+                                            "example": "1"
+                                        },
+                                        "name": {
+                                            "description": "0",
+                                            "type": "string",
+                                            "example": "Текст"
                                         },
                                         "description": {
                                             "description": "0",

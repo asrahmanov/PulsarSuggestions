@@ -50,6 +50,16 @@ reg_routes('suggestions-subdivision', \App\Http\Controllers\Api\SuggestionsSubdi
 );
 
 
+reg_routes('suggestions-faq', \App\Http\Controllers\Api\SuggestionsFAQController::class,
+    $router,
+    [],
+    [],
+    [
+        ['method' => 'get', 'uri' => 'get-by-id', 'pathParams'=>['id']],
+    ]
+);
+
+
 
 function reg_routes($name, $controllerName, $router, $only = [], $except = [], $customUses = [])
 {
