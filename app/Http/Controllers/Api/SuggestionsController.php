@@ -179,10 +179,24 @@ class SuggestionsController extends Controller
                 ->putFileAs('/',
                     request()
                         ->file('file'),
-                    'template__' . Str::slug($request->name, '_') . '_' . Carbon::now()->format('dmy') . '.' .
+                    'file__' . Str::slug($request->name, '_') . '_' . Carbon::now()->format('dmy') . '.' .
                     request()->file('file')->getClientOriginalExtension());
             $request->merge(['file_name' => $path]);
         }
+        $premium = 0;
+        if(isset($request->premium) AND $request->premium == true) {
+            $premium = 1;
+        }
+
+        $request->merge(['premium' => $premium]);
+
+
+        $oneself = 0;
+        if(isset($request->oneself) AND $request->oneself == true) {
+            $oneself = 1;
+        }
+
+        $request->merge(['oneself' => $oneself]);
 
 
         if ($request->id > 0) {
@@ -349,7 +363,6 @@ class SuggestionsController extends Controller
     public function destroy($id)
     {
         $is_deleted = (bool)Suggestions::whereId($id)->delete();
-
         return response(['is_deleted' => $is_deleted], $is_deleted ? 200 : 400);
     }
 }
