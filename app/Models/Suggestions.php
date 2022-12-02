@@ -39,4 +39,24 @@ class Suggestions extends Model
 
         ]);
     }
+
+
+    public function category()
+    {
+        return $this->hasOne(SuggestionsCategory::class, 'id','category_id');
+    }
+
+    public function status()
+    {
+        return $this->hasOne(SuggestionsStatus::class, 'id','status_id');
+    }
+
+    public function subdivision()
+    {
+        return $this->hasOne(SuggestionsSubdivision::class, 'id','subdivision_id');
+    }
+
+
+
+
 }

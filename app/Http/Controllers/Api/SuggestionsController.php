@@ -25,7 +25,7 @@ class SuggestionsController extends Controller
      */
     public function index()
     {
-        return response(Suggestions::get(), 200);
+        return response(Suggestions::with(['category', 'status', 'subdivision'])->get(), 200);
     }
 
 
@@ -49,7 +49,7 @@ class SuggestionsController extends Controller
     public function getById($id)
     {
 
-        return Suggestions::select()
+        return Suggestions::with(['category', 'status', 'subdivision'])->select()
             ->where(['id' => $id])
             ->get();
     }
