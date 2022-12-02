@@ -13,7 +13,7 @@ class SuggestionsStatusController extends Controller
      * @return \Illuminate\Http\JsonResponse
      * @OA\Get (
      *     path="/api/suggestions-status",
-     *     tags={"Suggestions Subdivision"},
+     *     tags={"Suggestions Status"},
      *     @OA\Response(
      *          response=200,
      *          description="",
@@ -30,7 +30,7 @@ class SuggestionsStatusController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      * @OA\Get (
-     *     tags={"Suggestions Subdivision"},
+     *     tags={"Suggestions Status"},
      *     path="/api/suggestions-status/get-by-id/{id}",
      *     @OA\Parameter( name="id", in="path", required=false, description="1", @OA\Schema( type="integer" ) ),
      *
@@ -73,10 +73,10 @@ class SuggestionsStatusController extends Controller
      * @return \Illuminate\Http\JsonResponse
      * @OA\Post(
      *     path="/api/suggestions-status",
-     *     tags={"Suggestions Subdivision"},
+     *     tags={"Suggestions Status"},
      *     @OA\RequestBody(
-     *    request="Create Suggestions Subdivision",
-     *    description="Create Suggestions Subdivision Fields",
+     *    request="Create Suggestions Status",
+     *    description="Create Suggestions Status Fields",
      *    @OA\JsonContent(
      *        type="object",
      *        required={""},
@@ -159,7 +159,7 @@ class SuggestionsStatusController extends Controller
      * @return \Illuminate\Http\JsonResponse
      * @OA\Patch (
      *     path="/api/suggestions-status/{id}",
-     *     tags={"Suggestions Subdivision"},
+     *     tags={"Suggestions Status"},
      *     @OA\Parameter(
      *      name="id",
      *      in="path",
@@ -168,8 +168,8 @@ class SuggestionsStatusController extends Controller
      *      )
      *   ),
      *     @OA\RequestBody(
-     *    request="Update Suggestions Subdivision",
-     *    description="Update Suggestions Subdivision Fields",
+     *    request="Update Suggestions Status",
+     *    description="Update Suggestions Status Fields",
      *    @OA\JsonContent(
      *        type="object",
      *        required={""},
@@ -234,7 +234,7 @@ class SuggestionsStatusController extends Controller
      * @return \Illuminate\Http\JsonResponse
      * @OA\Delete  (
      *     path="/api/suggestions-status/{id}",
-     *     tags={"Suggestions Subdivision"},
+     *     tags={"Suggestions Status"},
      *     @OA\Parameter(
      *      name="id",
      *      in="path",
