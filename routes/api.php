@@ -61,6 +61,16 @@ reg_routes('suggestions-faq', \App\Http\Controllers\Api\SuggestionsFAQController
 );
 
 
+reg_routes('suggestions-status', \App\Http\Controllers\Api\SuggestionsStatusController::class,
+    $router,
+    [],
+    [],
+    [
+        ['method' => 'get', 'uri' => 'get-by-id', 'pathParams'=>['id']],
+    ]
+);
+
+
 
 function reg_routes($name, $controllerName, $router, $only = [], $except = [], $customUses = [])
 {
