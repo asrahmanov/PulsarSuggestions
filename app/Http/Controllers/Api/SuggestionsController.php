@@ -116,10 +116,14 @@ class SuggestionsController extends Controller
      *        required={""},
      *          @OA\Property(property="fio",description="0", type="string", example="Текст"),
      *          @OA\Property(property="user_id",description="0", type="number", example="0"),
+     *          @OA\Property(property="status_id",description="0", type="number", example="1"),
+     *          @OA\Property(property="premium",description="0", type="number", example="0"),
+     *          @OA\Property(property="oneself",description="0", type="number", example="0"),
      *          @OA\Property(property="category_id",description="0", type="number", example="1"),
      *          @OA\Property(property="subdivision_id",description="0", type="number", example="1"),
      *          @OA\Property(property="file_name",description="0", type="string", example="текст"),
      *          @OA\Property(property="description",description="0", type="string", example="Текст"),
+     *          @OA\Property(property="economy",description="0", type="string", example="Текст"),
      *    )
      * ),
      *     @OA\Response(
@@ -130,10 +134,14 @@ class SuggestionsController extends Controller
      *          @OA\Property(property="id", type="number", example="1"),
      *          @OA\Property(property="fio",description="0", type="string", example="Текст"),
      *          @OA\Property(property="user_id",description="0", type="number", example="0"),
+     *          @OA\Property(property="status_id",description="0", type="number", example="1"),
+     *          @OA\Property(property="premium",description="0", type="number", example="0"),
+     *          @OA\Property(property="oneself",description="0", type="number", example="0"),
      *          @OA\Property(property="category_id",description="0", type="number", example="1"),
      *          @OA\Property(property="subdivision_id",description="0", type="number", example="1"),
      *          @OA\Property(property="file_name",description="0", type="string", example="текст"),
      *          @OA\Property(property="description",description="0", type="string", example="Текст"),
+     *          @OA\Property(property="economy",description="0", type="string", example="Текст"),
      *         )
      *      ),
      *     @OA\Response(
@@ -234,10 +242,14 @@ class SuggestionsController extends Controller
      *        required={""},
      *          @OA\Property(property="fio",description="0", type="string", example="Текст"),
      *          @OA\Property(property="user_id",description="0", type="number", example="0"),
+     *          @OA\Property(property="status_id",description="0", type="number", example="1"),
+     *          @OA\Property(property="premium",description="0", type="number", example="0"),
+     *          @OA\Property(property="oneself",description="0", type="number", example="0"),
      *          @OA\Property(property="category_id",description="0", type="number", example="1"),
      *          @OA\Property(property="subdivision_id",description="0", type="number", example="1"),
      *          @OA\Property(property="file_name",description="0", type="string", example="текст"),
      *          @OA\Property(property="description",description="0", type="string", example="Текст"),
+     *          @OA\Property(property="economy",description="0", type="string", example="Текст"),
      *    )
      * ),
      *     @OA\Response(
@@ -248,10 +260,14 @@ class SuggestionsController extends Controller
      *          @OA\Property(property="id", type="number", example="1"),
      *          @OA\Property(property="fio",description="0", type="string", example="Текст"),
      *          @OA\Property(property="user_id",description="0", type="number", example="0"),
+     *          @OA\Property(property="status_id",description="0", type="number", example="1"),
+     *          @OA\Property(property="premium",description="0", type="number", example="0"),
+     *          @OA\Property(property="oneself",description="0", type="number", example="0"),
      *          @OA\Property(property="category_id",description="0", type="number", example="1"),
      *          @OA\Property(property="subdivision_id",description="0", type="number", example="1"),
      *          @OA\Property(property="file_name",description="0", type="string", example="текст"),
      *          @OA\Property(property="description",description="0", type="string", example="Текст"),
+     *          @OA\Property(property="economy",description="0", type="string", example="Текст"),
      *
      *         )
      *      ),

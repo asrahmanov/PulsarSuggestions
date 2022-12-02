@@ -6,27 +6,18 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Suggestions extends Model
+class SuggestionsStatus extends Model
 {
     use HasFactory;
 
 
-    protected $table = 'suggestions';
+    protected $table = 'suggestions_status';
     protected $primaryKey = 'id';
     public $timestamps = true;
     protected $dates = ['deleted_at'];
 
     protected $fillable=[
-        "fio",
-        "user_id",
-        "category_id",
-        "status_id",
-        "premium",
-        "oneself",
-        "economy",
-        "subdivision_id",
-        "description",
-        "file_name",
+        "name",
     ];
 
     protected $hidden=[

@@ -18,6 +18,10 @@ class CreateSuggestionsTable extends Migration
             $table->string('fio');
             $table->integer('user_id');
             $table->integer('category_id');
+            $table->integer('status_id');
+            $table->boolean('premium')->default(0);
+            $table->boolean('oneself')->default(0);
+            $table->string('economy');
             $table->integer('subdivision_id');
             $table->string('description');
             $table->string('file_name');
