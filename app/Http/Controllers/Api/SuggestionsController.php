@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Suggestions;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class SuggestionsController extends Controller
 {
@@ -51,12 +53,6 @@ class SuggestionsController extends Controller
             ->where(['id' => $id])
             ->get();
     }
-
-
-
-
-
-
 
 
     /**
@@ -126,20 +122,34 @@ class SuggestionsController extends Controller
     {
 //        Storage::disk('upload')->;
 
-       if($request->id > 0) {
-           $form = Suggestions::whereId($request->id)->first();
-       } else {
-           $form = new Suggestions();
-       }
-
-        $validator = $form->validate($request->all());
-        if ($validator->fails()) {
-            return response(['errors' => $validator->errors()], 422);
+//        $table->string('fio');
+//        $table->integer('user_id');
+//        $table->integer('category_id');
+//        $table->integer('subdivision_id');
+//        $table->string('description');
+//        $table->string('file_name');
+        $path = "";
+        if($request->exists('file')) {
+            $file = $request->file('file');
+            $path = \Storage::disk('upload')
+                ->putFileAs('/',
+                    request()
+                        ->file('file'),
+                    'template__' . Str::slug($request->name, '_') . '_' . Carbon::now()->format('dmy') . '.' .
+                    request()->file('file')->getClientOriginalExtension());
+            $request->merge(['file_name' => $path]);
         }
 
-        $form->fill($request->only($form->getFillable()))->save();
+
+        if ($request->id > 0) {
+            $suggestions = Suggestions::whereId($request->id)->first();
+        } else {
+            $suggestions = new Suggestions();
+        }
+
+        $suggestions->fill($request->only($suggestions->getFillable()))->save();
         return response(
-            Suggestions::whereId($form->id)->first()->toArray(), 200);
+            Suggestions::whereId($suggestions->id)->first()->toArray(), 200);
 
 
     }
