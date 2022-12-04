@@ -19,11 +19,11 @@
 -- Table structure for table `failed_jobs`
 --
 # create databases
-CREATE DATABASE IF NOT EXISTS `pulsar_data_aggregation`;
+CREATE DATABASE IF NOT EXISTS `pulsar_suggestions`;
 
 CREATE USER if not exists 'admin'@'%' IDENTIFIED BY 'ghjuhfvvf';
 
 
-GRANT ALL PRIVILEGES ON pulsar_data_aggregation.* TO 'admin'@'%';
+GRANT ALL PRIVILEGES ON pulsar_suggestions.* TO 'admin'@'%';
 
 
