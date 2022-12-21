@@ -173,7 +173,8 @@ class SuggestionsController extends Controller
 //        $table->string('description');
 //        $table->string('file_name');
         $path = "";
-        if ($request->hasFile('file')){
+
+        if (isset($request->file)) {
             $file = $request->file('file');
             $path = \Storage::disk('upload')
                 ->putFileAs('/',
